@@ -1,6 +1,7 @@
 importScripts('https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js')
 importScripts('https://www.gstatic.com/firebasejs/5.5.8/firebase-messaging.js')
 
+/*
 if (!firebase.apps.length) {
     firebase.initializeApp({
         projectId: "blogeekplatzi-42241",
@@ -24,5 +25,7 @@ if (!firebase.apps.length) {
   })
 
 
+
+*/
 
 

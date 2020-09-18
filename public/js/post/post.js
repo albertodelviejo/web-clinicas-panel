@@ -2,9 +2,6 @@ class Post {
   constructor () {
       this.db = firebase.firestore()
 
-      const settings = { timestampsInSnapshots : true }
-      this.db.settings(settings)
-
   }
 
   crearPost (uid, emailUser, titulo, descripcion, imagenLink, videoLink) {
@@ -26,7 +23,6 @@ class Post {
   consultarTodosPost () {
     this.db.collection('posts')
     .orderBy('fecha','asc')
-    .orderBy('titulo', 'asc')
     .onSnapshot(querySnapshot => {
         $('#posts').empty()
         if(querySnapshot.empty){

@@ -128,7 +128,7 @@ class PostDAO {
       this.db
         .collection('posts')
         .where('titulo', '==', titulo)
-        .where('autor', '==', autor)
+        //.where('autor', '==', autor)
         .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {

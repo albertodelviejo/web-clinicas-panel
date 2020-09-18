@@ -2,14 +2,13 @@ $(() => {
 
     const objAuth = new Autenticacion();
 
-    $("#authFB").click(() => objAuth.authCuentaFacebook());
-
     $("#btnRegistroEmail").click(() => {
         const nombres = $('#nombreContactoReg').val();
         const email = $('#emailContactoReg').val();
         const password = $('#passwordReg').val();
+        const cif = $('#cifclinicaReg').val();
         const auth = new Autenticacion()
-        auth.crearCuentaEmailPass(email, password, nombres)
+        auth.crearCuentaEmailPass(email, password, nombres, cif)
     });
 
     $("#btnInicioEmail").click(() => {
@@ -18,10 +17,6 @@ $(() => {
         const auth = new Autenticacion()
         auth.autEmailPass(email,password)
     });
-
-    $("#authGoogle").click(() => objAuth.authCuentaGoogle());//AUTH con GOOGLE);
-
-    //$("#authTwitter").click(() => //AUTH con Twitter);
 
     $('#btnRegistrarse').click(() => {
         $('#modalSesion').modal('close');
