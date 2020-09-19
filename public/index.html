@@ -53,7 +53,6 @@
                     <li><a id="btnNuevoTicket">Nuevo Ticket</a></li>
                     <li><a id="btnTodosTickets">Ver todos</a></li>
                     <li><a id="btnPacienteTickets">Por Paciente</a></li>
-                    <li><a id="btnConsultorTickets">Por Consultor</a></li>
                     <li><a id="btnConceptoTickets">Por Concepto</a></li>
                 </ul>
             </li>
@@ -145,90 +144,6 @@
             </div>
         </div>
 
-    
-
-    <!-- Modal AltaClinica -->
-    <div id="modalAltaClinica" class="modal modal-registro">
-        <div class="modal-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col s12 m6 registro-bienvenida">
-                        <var ></var>
-                        <h4>Información Clínica</h4>
-                        <div class="registro-bienvenida-texto">
-                            Introduzca la información de la clínica
-                        </div>
-                        <span>Gracias</span>
-                    </div>
-                    <div class="col s12 m6 registro-formulario">
-                        <div class="input-field">
-                            <input id="nameAltaClinica" type="text" maxlength="30" data-length="30" required />
-                            <label for="nameAltaClinica">Nombre Clínica:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="razonAltaClinica" type="text"  maxlength="30" data-length="30" required />
-                            <label for="razonAltaClinica">Razón social:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="cifAltaClinica" type="text" required />
-                            <label for="cifAltaClinica">CIF:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="phoneAltaClinica" type="tel" required />
-                            <label for="phoneAltaClinica">Teléfono:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="mailAltaClinica" type="text" required />
-                            <label for="mailAltaClinica">Email:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="addressAltaClinica" type="text" required />
-                            <label for="addressAltaClinica">Dirección de la clínica:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="managerAltaClinica" type="text" required />
-                            <label for="managerAltaClinica">Nombre del Gerente:</label>
-                        </div>
-                        <div class="">
-                            <select>
-                              <option value="" disabled selected>Choose your option</option>
-                              <option value="1">Option 1</option>
-                              <option value="2">Option 2</option>
-                              <option value="3">Option 3</option>
-                            </select>
-                            <label>Materialize Select</label>
-                          </div>
-                          <!--
-                       <div class="input-field">
-                            <input id="statusAltaClinica" type="text" required />
-                            <label for="statusAltaClinica">Estatus:</label>
-                        </div>
-                          -->
-                       
-                        <div class="div-btnInicioSesion">
-                            <a id="btnCreateClinica" onclick="" class="btn waves-effect waves-light">Guardar Clínica<i class="material-icons left">create</i></a>
-                        </div>                      
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal NombreClinica -->
-    <div id="modalNombreClinica" class="modal modal-registro">
-        <div class="modal-content">
-            <div class="container">
-                        <div class="input-field">
-                            <input id="nameSearchClinica" type="text" maxlength="30" data-length="30" required />
-                            <label for="nameSearchClinica">Introduzca el nombre:</label>
-                            <input id="typeSearchClinica" type="hidden" maxlength="30" data-length="30"/>
-                        </div>
-                        <div class="div-btnInicioSesion">
-                            <a id="btnSearchClinica" class="btn waves-effect waves-light">Buscar<i class="material-icons left">create</i></a>
-                        </div>                      
-            </div>
-        </div>
-    </div>
 
     <!-- Modal Id -->
     <div id="modalId" class="modal modal-registro">
@@ -312,10 +227,7 @@
                             <label for="idAltaPaciente">Id:</label>
                         </div>
                         <div class="input-field">
-                            <input id="idclinicaAltaPaciente" type="text" required />
-                            <label for="idclinicaAltaPaciente">CIF de clínica asociada:</label>
-                        </div>
-                        <div class="input-field">
+                            <input id="idclinicaAltaPaciente" type="hidden" required />
                             <input id="idconsultorAltaPaciente" type="text" required />
                             <label for="idconsultorAltaPaciente">Id del consultor asociado:</label>
                         </div>
@@ -346,6 +258,41 @@
                         -->
                         <div class="div-btnInicioSesion">
                             <a id="btnCreatePaciente" class="btn waves-effect waves-light">Guardar Paciente<i class="material-icons left">create</i></a>
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal nuevoTicket -->
+    <div id="modalNuevoTicket" class="modal modal-registro">
+        <div class="modal-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m6 registro-bienvenida">
+                        <var ></var>
+                        <h4>Nuevo Ticket</h4>
+                        <div class="registro-bienvenida-texto">
+                            Introduzca la información del ticket
+                        </div>
+                        <span>Gracias</span>
+                    </div>
+                    <div class="col s12 m6 registro-formulario">
+                        <div class="input-field">
+                            <input id="nameAltaTicket" type="text" maxlength="30" data-length="30" required />
+                            <label for="nameAltaTicket">Concepto:</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="idpacienteAltaTicket" type="text"  maxlength="30" data-length="30" required />
+                            <label for="idpacienteAltaTicket">Id del paciente:</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="priceAltaTicket" type="number" required />
+                            <label for="priceAltaTicket">Precio:</label>
+                        </div>
+                        <div class="div-btnInicioSesion">
+                            <a id="btnCreateTicket" class="btn waves-effect waves-light">Crear ticket<i class="material-icons left">create</i></a>
                         </div>                      
                     </div>
                 </div>
@@ -512,18 +459,17 @@
                         <input type="hidden" id="idConsultor" value="3487">
                         <nav class="menu">
                             <ul>
-                               
-                                    <li><a id="btnPacientes">PACIENTES</a>
-                                        <ul>
-                                            <li><a>Consultar pacientes</a>
-                                                <ul>
-                                                    <li><a id="btnTodosPacientesConsultor">Ver todas</a></li>
-                                                    <li><a id="btnIdPacientesConsultor">Por Identificación</a></li>
-                                                    <li><a id="btnPacientesConsultorClinica">Por Clínica</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                <li><a id="btnPacientes">PACIENTES</a>
+                                    <ul>
+                                        <li><a>Consultar pacientes</a>
+                                            <ul>
+                                                <li><a id="btnTodosPacientesConsultor">Ver todas</a></li>
+                                                <li><a id="btnIdPacientesConsultor">Por Identificación</a></li>
+                                                <li><a id="btnPacientesConsultorClinica">Por Clínica</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
                                 
                                 <li><a id="btnTickets">TICKETS</a>
                                     <ul>

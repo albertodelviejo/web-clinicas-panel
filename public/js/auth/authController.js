@@ -7,15 +7,13 @@ $(() => {
         const email = $('#emailContactoReg').val();
         const password = $('#passwordReg').val();
         const cif = $('#cifclinicaReg').val();
-        const auth = new Autenticacion()
-        auth.crearCuentaEmailPass(email, password, nombres, cif)
+        objAuth.crearCuentaEmailPass(email, password, nombres, cif)
     });
 
     $("#btnInicioEmail").click(() => {
         const email = $('#emailSesion').val();
         const password = $('#passwordSesion').val();
-        const auth = new Autenticacion()
-        auth.autEmailPass(email,password)
+        objAuth.autEmailPass(email,password)
     });
 
     $('#btnRegistrarse').click(() => {

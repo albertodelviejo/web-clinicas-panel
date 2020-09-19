@@ -5,6 +5,7 @@ $(() => {
   // Init Firebase nuevamente
   if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
+    this.db = firebase.firestore()
   }
 
   // Firebase observador del cambio de estado
@@ -15,8 +16,19 @@ $(() => {
         $('#avatar').attr('src', user.photoURL)
       }else{
         $('#avatar').attr('src', 'imagenes/usuario_auth.png')
-      }
-    }else{
+        this.db.collection("clinicas")
+        .where('mail','==', user.email)
+        .onSnapshot(querySnapshot => {
+          if(!querySnapshot.empty){
+        querySnapshot.forEach(result => {
+          $('#title').text(result.data().name)
+          $('#subtitle').text(result.data().address)
+          $('#idclinicaAltaPaciente').val(result.data().cif)
+        })
+    }
+  }) 
+    }
+  }else{
       $('#btnInicioSesion').text('Iniciar Sesión')
       $('#avatar').attr('src', 'imagenes/usuario.png')
     }

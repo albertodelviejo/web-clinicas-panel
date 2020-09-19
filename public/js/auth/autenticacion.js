@@ -5,11 +5,24 @@ class Autenticacion {
 }
 
   autEmailPass (email, password) {
+    this.db.collection("clinicas")
+        .where('mail','==', email)
+        .onSnapshot(querySnapshot => {
+          if(querySnapshot.empty){
+            alert("Credenciales incorrectas")
+            return false
+        }else{
     firebase.auth().signInWithEmailAndPassword(email,password)
     .then(result => {
       if(result.user.emailVerified){
         Materialize.toast(`Bienvenido`, 5000)
         $('#avatar').attr('src', 'imagenes/usuario_auth.png')
+        querySnapshot.forEach(result => {
+          $('#title').text(result.data().name)
+          $('#subtitle').text(result.data().address)
+          $('#idclinicaAltaPaciente').val(result.data().cif)
+        })
+
       }else{
         firebase.auth().signOut()
         Materialize.toast(`Por favor, realize la verificación de la cuenta`, 5000)
@@ -17,6 +30,8 @@ class Autenticacion {
     })
     $('.modal').modal('close')
   }
+  })
+}
 
   crearCuentaEmailPass (email, password, name, cif) {
 
@@ -30,32 +45,39 @@ class Autenticacion {
         }else{
           firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(result => {
-        result.user.updateProfile({
-          displayname : name
+
+        querySnapshot.forEach(clinicaresult =>{
+
+          console.error(clinicaresult.data().cif)
+          console.error(result.user.uid)
+          
+         let clinica = this.db.collection("clinicas").doc(clinicaresult.data().cif)
+
+         clinica.update({
+          uid: result.user.uid,
+        }).then(function() {
+          console.log("Document successfully updated!");
+      })
+      .catch(function(error) {
+          // The document probably doesn't exist.
+          console.error("Error updating document: ", error);
+      });
         })
 
         const configuracion = {
-          url : 'https://clinicas-plancoberturadental.firebaseapp.com/'
+          url : 'https://plancoberturadentalapp.web.app/'
         }
 
         result.user.sendEmailVerification(configuracion).catch(error => {
           console.error(error)
-          Materialize.toast(error.message, 4000
+          return Materialize.toast(error.message, 4000
             )
             $('.modal').modal('close')
         })
-
-        querySnapshot.forEach(clinicaresult =>{
-          this.db.collection("clinicas").doc(clinicaresult.data().cif).set({
-            uid: result.user.uid,
-          })
-        })
-
-        
-
+    
         firebase.auth().signOut()
 
-        Materialize.toast(
+        return Materialize.toast(
       `Bienvenido ${name}, acabamos de mandarte un mail para realizar el proceso de verificación`,
       4000
     )
@@ -65,6 +87,8 @@ class Autenticacion {
         console.error(error)
         Materialize.toast(error.message, 4000)
       })
+
+      
         }
         })
   }
