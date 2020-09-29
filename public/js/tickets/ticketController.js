@@ -139,6 +139,13 @@ $(() => {
 
       })
 
+      $("#btnSearchTopicTicket").click(() => {
+        const value = $('#searchValueTicket').val()
+        const idClinica = $('#idclinicaAltaPaciente').val()
+        
+        const ticket = new Ticket()
+        ticket.showTicketByTopicClinica(idClinica,value)
+      })
 
 
 })

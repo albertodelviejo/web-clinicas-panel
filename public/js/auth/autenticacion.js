@@ -33,9 +33,51 @@ class Autenticacion {
   })
 }
 
+  crearCuentaUserEmailPass (email, password,name, dni,  cif) {
+
+    this.db.collection("usuarios")
+        .where('mail','==', email)
+        .where('cif','==',cif)
+        .onSnapshot(querySnapshot => {
+          if(querySnapshot.empty){
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(result => {
+
+        const configuracion = {
+          url : 'https://plancoberturadentalapp.web.app/'
+        }
+
+        result.user.sendEmailVerification(configuracion).catch(error => {
+          console.error(error)
+          return Materialize.toast(error.message, 4000
+            )
+            $('.modal').modal('close')
+        })
+
+        this.db.collection("usuarios").doc(id).set({
+          uid: result.user.uid,
+          name: name,
+          email: email,
+          id: dni, 
+          idClinica: cif
+        })
+    
+        firebase.auth().signOut()
+
+        return Materialize.toast(
+      `Bienvenido ${name}, acabamos de mandarte un mail para realizar el proceso de verificación`,
+      4000
+    )
+      })
+        }else{
+          Materialize.toast("El usuario ya existe en la base de datos", 4000)
+        }
+        })
+  }
+
   crearCuentaEmailPass (email, password, name, cif) {
 
-    this.db.collection("clinicas")
+    this.db.collection("usuarios")
         .where('mail','==', email)
         .where('cif','==',cif)
         .onSnapshot(querySnapshot => {

@@ -78,7 +78,7 @@ class Ticket {
                    "Puntos ganados",
                    post.data().points,
                    "Fecha",
-                   post.data().date,
+                   post.data().date.toDate(),
                )
                $('#clinicas').append(postHtml) 
        })
@@ -169,9 +169,12 @@ showTicketByIdClinica(idClinica){
                 "Puntos ganados",
                 post.data().points,
                 "Fecha",
-                post.data().date,
+                post.data().date ,
                )
-               $('#clinicas').append(postHtml) 
+               $("#section-title").text("Tickets")
+                   $("#menuTicket").show()
+                   $("#clinicas").attr('class', 'posts');
+                   $('#clinicas').append(postHtml) 
            })
         }
     })
@@ -319,30 +322,7 @@ obtenerPostTemplate (
           <div class="post-titulo">
               <h5>${title}</h5>
           </div>
-          <div class="row">
-              <div class="col m6">
-                  ${field1title}: ${field1}
-              </div>
-              <div class="col m6">
-                  ${field2title}: ${field2}
-              </div>
-          </div>
-          <div class="row">
-              <div class="col m6">
-                  ${field3title}: ${field3}
-              </div>
-              <div class="col m6">
-                  ${field4title}: ${field4}
-              </div>
-          </div>
-          <div class="row">
-              <div class="col m6">
-              ${field5title}: ${field5}
-              </div>
-              <div class="col m6">
-              ${field6title}: ${field6}
-              </div>        
-          </div>
+          <p>Dni Paciente: ${field4} Teléfono: ${field1} Fecha: ${field6.toDate().toLocaleDateString()}</p>
       </article>`
   }
 }
