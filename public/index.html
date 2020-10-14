@@ -5,604 +5,638 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Clinicas - Plan Cobertura Dental</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--build:css css/styles.min.css -->
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <!--endbuild-->
     <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <!--build:css css/styles.min.css -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--endbuild-->
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body>
-    <header class="headerppal">
-        <figure class="header-logotipo">
-            <img src="imagenes/logopcd.png" alt="Blog Logotipo" onclick="refresh()">
-        </figure>
-        <h2 id="title" class="titulo">Plan Cobertura Dental</h2>
-            <a id="btnInicioSesion" class="modal-trigger waves-effect waves-light btn btnPpal">Iniciar Sesión</a>
-            <figure class="header-avatar">
-                <img id="avatar" src="imagenes/usuario.png" alt="Avatar">
-                <div class="user-description">
-                    <span id="userlabel">Usuario</span><br>
-                    <span id="typeuserlabel">Tipo de usuario</span>
-                </div>   
-            </figure>
-    </header>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <nav id="menuPaciente" class="side-menu">
-        <input id="searchValuePaciente" class="input" type="text">
-        <button id="btnSearchNamePaciente" class="search-button">Buscar nombre</button>
-        <ul>
-        <li id="btnAltaPaciente" class="item"><a id="">Dar de alta</a></li>                     
-        <li id="btnTodosPacientes" class="item"><a id="">Todos</a></li>
-        <li id="btnActivosPacientes" class="item"><a id="">Activos</a></li>
-        <li id="btnInactivosPacientes" class="item"><a id="">Inactivos</a></li>
-        <li id="btnEsperaPacientes" class="item"><a id="">En espera</a></li>
-    </nav>
-    <nav id="menuConsultor" class="side-menu">
-        <input id="searchValueConsultor" class="input" type="text">
-        <button id="btnSearchNameConsultor" class="search-button">Buscar nombre</button>
-        <ul>
-        <li id="btnAltaConsultor" class="item"><a id="">Dar de alta</a></li>                     
-        <li id="btnTodosConsultores" class="item"><a id="">Todas</a></li>
-        <li id="btnActivosConsultores" class="item"><a id="">Activas</a></li>
-        <li id="btnInactivosConsultores" class="item"><a id="">Inactivas</a></li>
-        <li id="btnEsperaConsultores" class="item"><a id="">En espera</a></li>
-    </nav>
-    <nav id="menuTicket" class="side-menu">
-        <input id="searchValueTicket" class="input" type="text">
-        <button id="btnSearchTopicTicket" class="search-button">Buscar Concepto</button>
-        <ul>
-        <li id="btnNuevoTicket" class="item"><a id="">Nuevo Ticket</a></li>                     
-        <li id="btnTodosTickets" class="item"><a id="">Todos</a></li>
-    </nav>
-    <nav id="menuUsuario" class="side-menu">
-        <input id="searchValueUsuario" class="input" type="text">
-        <button id="btnSearchNameConsultor" class="search-button">Buscar nombre</button>
-        <ul>
-        <li id="btnAltaUsuario" class="item"><a id="">Dar de alta</a></li>                     
-        <li id="btnTodosUsuario" class="item"><a id="">Todas</a></li>
-    </nav>
-    <h3 class="section-title" id="section-title"></h3>
-    <section class="menu-center" id="clinicas">        
-        <article class="menu-div" onclick=call("paciente")>
-            <img class="menu-div-img" src="imagenes/pacientes.png" alt="Clinicas">
-            <div class="post-titulo">
-                <h5>Pacientes</h5>
+<header class="headerppal">
+    <figure class="header-logotipo">
+        <img src="imagenes/logopcd.png" alt="Blog Logotipo" onclick="refresh()">
+    </figure>
+    <h2 id="title" class="titulo">Plan Cobertura Dental</h2>
+    <a id="btnInicioSesion" class="modal-trigger waves-effect waves-light btn btnPpal">Iniciar Sesión</a>
+    <figure class="header-avatar">
+        <img id="avatar" src="imagenes/usuario.png" alt="Avatar">
+        <div class="user-description">
+            <span id="userlabel">Usuario</span><br>
+            <span id="typeuserlabel">Tipo de usuario</span>
+        </div>
+    </figure>
+</header>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<nav id="menuPaciente" class="side-menu">
+    <input id="searchValuePaciente" class="input" type="text">
+    <button id="btnSearchNameClinica" class="search-button"><i class="fa fa-search"></i></button>
+    <ul>
+        <li id="btnAltaPaciente" class="item"><a id="">Dar de alta<i class="fa fa-arrow-right"></i></a></li>
+        <li id="btnTodosPacientes" class="item"><a id="">Todos<i class="fa fa-arrow-right"></i></a></li>
+        <li id="btnActivosPacientes" class="item"><a id="">Activos<i class="fa fa-arrow-right"></i></a></li>
+        <li id="btnInactivosPacientes" class="item"><a id="">Inactivos<i class="fa fa-arrow-right"></i></a></li>
+        <li id="btnEsperaPacientes" class="item"><a id="">En espera<i class="fa fa-arrow-right"></i></a></li>
+</nav>
+<nav id="menuConsultor" class="side-menu">
+    <input id="searchValueConsultor" class="input" type="text">
+    <button id="btnSearchNameClinica" class="search-button"><i class="fa fa-search"></i></button>
+    <ul>
+        <li id="btnAltaConsultor" class="item"><a id="">Dar de alta<i class="fa fa-arrow-right"></i></a></li>
+        <li id="btnTodosConsultores" class="item"><a id="">Todas<i class="fa fa-arrow-right"></i></a></li>
+        <li id="btnActivosConsultores" class="item"><a id="">Activas<i class="fa fa-arrow-right"></i></a></li>
+        <li id="btnInactivosConsultores" class="item"><a id="">Inactivas<i class="fa fa-arrow-right"></i></a></li>
+        <li id="btnEsperaConsultores" class="item"><a id="">En espera<i class="fa fa-arrow-right"></i></a></li>
+</nav>
+<nav id="menuTicket" class="side-menu">
+    <input id="searchValueTicket" class="input" type="text">
+    <button id="btnSearchTopicTicket" class="search-button">Buscar Concepto</button>
+    <ul>
+        <li id="btnNuevoTicket" class="item"><a id="">Nuevo Ticket<i class="fa fa-arrow-right"></i></a></li>
+        <li id="btnTodosTickets" class="item"><a id="">Todos<i class="fa fa-arrow-right"></i></a></li>
+</nav>
+<nav id="menuUsuario" class="side-menu">
+    <input id="searchValueUsuario" class="input" type="text">
+    <button id="btnSearchNameClinica" class="search-button"><i class="fa fa-search"></i></button>
+    <ul>
+        <li id="btnAltaUsuario" class="item"><a id="">Dar de alta<i class="fa fa-arrow-right"></i></a></li>
+        <li id="btnTodosUsuario" class="item"><a id="">Todas<i class="fa fa-arrow-right"></i></a></li>
+</nav>
+<h3 class="section-title" id="section-title"></h3>
+<div id="accordion">
+    <section class="menu-center" id="clinicas">
+        <div class="row">
+            <div class="col-md-1">
+
             </div>
-        </article>
-        <article class="menu-div" onclick=call("consultor")> 
-            <img class="menu-div-img" src="imagenes/consultores.png" alt="Clinicas">
-            <div class="post-titulo">
-                <h5>Consultores</h5>
+            <div class="col-md-2 card">
+                <article class="menu-div" onclick=call("paciente")>
+                    <img class="menu-div-img" src="imagenes/pacientes.png" alt="Clinicas">
+                    <div class="post-titulo">
+                        <h5>Pacientes</h5>
+                    </div>
+                </article>
             </div>
-        </article>
-        <article class="menu-div" onclick=call("ticket")>
-            <img class="menu-div-img" src="imagenes/proveedores.png" alt="Tickets">
-            <div class="post-titulo">
-                <h5>Tickets</h5>
+            <div class="col-md-2 card">
+                <article class="menu-div" onclick=call("consultor")>
+                    <img class="menu-div-img" src="imagenes/consultores.png" alt="Clinicas">
+                    <div class="post-titulo">
+                        <h5>Consultores</h5>
+                    </div>
+                </article>
             </div>
-        </article>
-        <article class="menu-div" onclick=call("usuario")>
-            <img class="menu-div-img" src="imagenes/usuarios.png" alt="Clinicas">
-            <div class="post-titulo">
-                <h5>Usuarios</h5>
+            <div class="col-md-2 card">
+                <article class="menu-div" onclick=call("ticket")>
+                    <img class="menu-div-img" src="imagenes/proveedores.png" alt="Tickets">
+                    <div class="post-titulo">
+                        <h5>Tickets</h5>
+                    </div>
+                </article>
             </div>
-        </article>
-        <article class="menu-div" onclick=call("creditplan")>
-            <img class="menu-div-img" src="imagenes/creditplan.png" alt="Credit Plan">
-            <div class="post-titulo">
-                <h5>Credit Plan</h5>
+            <div class="col-md-2 card">
+                <article class="menu-div" onclick=call("usuario")>
+                    <img class="menu-div-img" src="imagenes/usuarios.png" alt="Clinicas">
+                    <div class="post-titulo">
+                        <h5>Usuarios</h5>
+                    </div>
+                </article>
             </div>
-        </article>
+            <div class="col-md-2 card">
+                <article class="menu-div" onclick=call("creditplan")>
+                    <img class="menu-div-img" src="imagenes/creditplan.png" alt="Credit Plan">
+                    <div class="post-titulo">
+                        <h5>Credit Plan</h5>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        </div>
     </section>
-    <footer class="footer" id="footer">
+</div>
+<footer class="footer" id="footer">
 
-        <div class="contenedor-footer">
-                <!-- Esto es el footer -->
-                <p class="realizadopor"><strong>Plan Cobertura Dental</strong></p>
-        </div>
-    </footer>
-
-        <!-- Modal de Inicio de Sesión -->
-        <div id="modalSesion" class="modal modal-registro">
-            <div class="modal-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12 m6 registro-bienvenida">
-                            <h4>Bienvenido a Plan Cobertura Dental</h4>
-                            <div class="registro-bienvenida-texto">
-                                Estamos encantados de tener de vuelta
-                            </div>
-                            <span>Inicia Sesión</span>
-                        </div>
-                        <div class="col s12 m6 registro-formulario">
-                            <div class="input-field">                            
-                                <input id="emailSesion" type="email" required/>
-                                <label for="emailSesion">E-mail:</label>
-                            </div>
-                            <div class="input-field">
-                                <input id="passwordSesion" type="password" required />
-                                <label for="passwordSesion">Password:</label>
-                            </div>
-                            <div class="div-btnInicioSesion">
-                                <a id="btnInicioEmail" class="btn waves-effect waves-light">Iniciar Sesión<i class="material-icons right">send</i></a>
-                            </div>           
-                        </div>
-                        <div class="col s12 m12 div-btnRegistrarse">
-                            <a id="btnRegistrarse" class="btn waves-effect waves-light">Crear una cuenta<i class="material-icons left">account_box</i></a>                        
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Modal de registro -->
-        <div id="modalRegistro" class="modal modal-registro">
-            <div class="modal-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12 m6 registro-bienvenida">
-                            <h4>Registro de nuevo usuario</h4>
-                            <div class="registro-bienvenida-texto">
-                                Nuevo usuario con acceso de lectura
-                            </div>
-                            <span>Introduzca los datos</span>
-                        </div>
-                        <div class="col s12 m6 registro-formulario">
-                            <div class="input-field">
-                                <input id="nombreContactoReg" type="text"  maxlength="50" data-length="50" required />
-                                <label for="nombreContactoReg">Nombres:</label>
-                            </div>
-                            <div class="input-field">
-                                <input id="emailContactoReg" type="email"  maxlength="50" data-length="50" required />
-                                <label for="emailContactoReg">E-mail:</label>
-                            </div>
-                            <div class="input-field">
-                                <input id="passwordReg" type="password"  maxlength="10" data-length="10" required />
-                                <label for="passwordReg">Password:</label>
-                            </div>
-                            <div class="input-field">
-                                <input id="cifclinicaReg" type="text"  maxlength="10" data-length="10" required />
-                                <label for="cifclinicaReg">Cif de clínica: </label>
-                            </div>
-                            <div class="div-btnInicioSesion">
-                                <a id="btnRegistroEmail" class="btn waves-effect waves-light">Registrarse<i class="material-icons left">account_box</i></a>
-                            </div>                        
-                        </div>
-                        <div class="col s12 m12 div-btnRegistrarse">
-                            <a id="btnIniciarSesion" class="btn waves-effect waves-light">Iniciar Sesión<i class="material-icons right">send</i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal de registro -->
-        <div id="modalRegistroUsuario" class="modal modal-registro">
-            <div class="modal-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12 m6 registro-bienvenida">
-                            <h4>Registro de nuevo usuario</h4>
-                            <div class="registro-bienvenida-texto">
-                                Nuevo usuario con acceso a la app
-                            </div>
-                            <span>Introduzca los datos</span>
-                        </div>
-                        <div class="col s12 m6 registro-formulario">
-                            <div class="input-field">
-                                <input id="nombreUsuarioAppReg" type="text"  maxlength="50" data-length="50" required />
-                                <label for="nombreUsuarioAppReg">Nombres:</label>
-                            </div>
-                            <div class="input-field">
-                                <input id="emailUsuarioAppReg" type="email"  maxlength="50" data-length="50" required />
-                                <label for="emailUsuarioAppReg">E-mail:</label>
-                            </div>
-                            <div class="input-field">
-                                <input id="passwordUsuarioAppReg" type="password"  maxlength="10" data-length="10" required />
-                                <label for="passwordUsuarioAppReg">Password:</label>
-                            </div>
-                            <div class="input-field">
-                                <input id="dniUsuarioAppReg" type="password"  maxlength="10" data-length="10" required />
-                                <label for="dniUsuarioAppReg">Password:</label>
-                            </div>
-                            <div class="div-btnInicioSesion">
-                                <a id="btnRegistroUsuarioEmail" class="btn waves-effect waves-light">Registrarse<i class="material-icons left">account_box</i></a>
-                            </div>                        
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    <!-- Modal Id -->
-    <div id="modalId" class="modal modal-registro">
-        <div class="modal-content">
-            <div class="container">
-                        <div class="input-field">
-                            <input id="idSearch" type="text" maxlength="30" data-length="30" required />
-                            <label for="idSearch">Introduzca el ID:</label>
-                            <input id="typeSearchid" type="hidden" maxlength="30" data-length="30"/>
-                        </div>
-                        <div class="div-btnInicioSesion">
-                            <a id="btnSearchid" class="btn waves-effect waves-light">Buscar<i class="material-icons left">create</i></a>
-                        </div>                      
-            </div>
-        </div>
+    <div class="contenedor-footer">
+        <!-- Esto es el footer -->
+        <p class="realizadopor"><strong>Plan Cobertura Dental</strong></p>
     </div>
+</footer>
 
-    <!-- Modal CifClinica -->
-    <div id="modalCifClinica" class="modal modal-registro">
-        <div class="modal-content">
-            <div class="container">
-                        <div class="input-field">
-                            <input id="nameSearchClinicaCif" type="text" maxlength="30" data-length="30" required />
-                            <label for="nameSearchClinicaCif">Introduzca el CIF:</label>
-                        </div>
-                        <div class="div-btnInicioSesion">
-                            <a id="btnSearchCifClinica" class="btn waves-effect waves-light">Buscar<i class="material-icons left">create</i></a>
-                        </div>                      
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal AltaPaciente -->
-    <div id="modalAltaPaciente" class="modal modal-registro">
-        <div class="modal-content">
-            <div class="container">
-                <h4>Información Paciente</h4>
-                <div class="row">
-                    <div class="col s12 m6 registro-bienvenida">
-                        <div class="input-field">
-                            <input id="nameAltaPaciente" type="text" maxlength="30" data-length="30" required />
-                            <label for="nameAltaPaciente">Nombre Paciente:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="surname1AltaPaciente" type="text"  maxlength="30" data-length="30" required />
-                            <label for="surname1AltaPaciente">Primer apellido:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="surname2AltaPaciente" type="text" required />
-                            <label for="surname2AltaPaciente">Segundo apellido:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="mailAltaPaciente" type="email" required />
-                            <label for="mailAltaPaciente">Email:</label>
-                        </div>
-                        <label for="genderAltaPaciente">Género:</label>
-                          <form>
-                            <input type="radio" id="maleActivePaciente" name="gender" value="male" checked>
-                            <label for="maleActivePaciente">Hombre</label><br>
-                            <input type="radio" id="femaleActivePaciente" name="gender" value="female">
-                            <label for="femaleActivePaciente">Mujer</label><br>
-                            <input type="radio" id="otherActivePaciente" name="gender" value="other">
-                            <label for="otherActivePaciente">Otro</label>
-                          </form>
-                        <div class="input-field">
-                            <label>Fecha de nacimiento:</label>
-                            <input type="date" id="birthdayAltaPaciente" name="birthday" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="addressAltaPaciente">Dirección:</label>
-                            <input id="addressAltaPaciente" type="text" required />   
-                        </div>
-                        <div class="input-field">
-                            <input id="phoneAltaPaciente" type="tel" required />
-                            <label for="phoneAltaPaciente">Teléfono:</label>
-                    </div>
-                        <label for="idtypeAltaPaciente">Tipo de id:</label>
-                          <form>
-                            <input type="radio" id="dniActivePaciente" name="idtype" value="DNI" checked>
-                            <label for="dniActivePaciente">DNI</label><br>
-                            <input type="radio" id="passActivePaciente" name="idtype" value="Passport">
-                            <label for="passActivePaciente">Passport</label><br>
-                            <input type="radio" id="nieActivePaciente" name="idtype" value="NIE">
-                            <label for="nieActivePaciente">NIE</label>
-                          </form>
-                        <div class="input-field">
-                            <input id="idAltaPaciente" type="text" required />
-                            <label for="idAltaPaciente">Id:</label>
-                        </div>   
-                        <div class="input-field">
-                            <input id="idclinicaAltaPaciente" type="hidden" required />
-                            <input id="idconsultorAltaPaciente" type="text" required />
-                            <label for="idconsultorAltaPaciente">Id del consultor asociado:</label>
-                        </div>
-                        <label for="creditplanPaciente">Credit Plan:</label>
-                        <form>
-                            <input id="iscredittruePaciente" type="radio" name="iscreditplan" value="true" required/>
-                            <label for="iscredittruePaciente">Si</label>
-                            <input id="iscreditfalsePaciente" type="radio" name="iscreditplan" value="false" required checked/>
-                            <label for="iscreditfalsePaciente">No</label>
-                        </form>
-                        <div class="input-field">
-                            <input id="maritalAltaPaciente" type="text" required />
-                            <label for="maritalAltaPaciente">Estado Civil:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="mobileAltaPaciente" type="tel" required />
-                            <label for="mobileAltaPaciente">Móvil:</label>
-                        </div>
-
-                        <input id="typeForm" type="hidden" required />
-                          <label for="statusPaciente">Estatus:</label>
-                          <form>
-                            <input type="radio" id="statusActivePaciente" name="statusPaciente" value="active" checked>
-                            <label for="statusActivePaciente">Activa</label><br>
-                            <input type="radio" id="statusInactivePaciente" name="statusPaciente" value="inactive">
-                            <label for="statusInactivePaciente">Inactiva</label><br>
-                            <input type="radio" id="statusStandbyPaciente" name="statusPaciente" value="standby">
-                            <label for="statusStandbyPaciente">En espera</label>
-                          </form>
-                        <!--
-                        <div class="progress-panel">
-                            <label for="btnUploadFile">Imagen:</label>
-                            <input type="file" value="upload" id="btnUploadFile" />
-                            <div class="progress">
-                                <div class="determinate" style="width: 0%"></div>
-                            </div>
-                        </div>
-                        -->
-                        <div class="div-btnInicioSesion">
-                            <a id="btnCreatePaciente" class="btn waves-effect waves-light">Guardar Paciente<i class="material-icons left">create</i></a>
-                        </div>                      
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal nuevoTicket -->
-    <div id="modalNuevoTicket" class="modal modal-registro">
-        <div class="modal-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col s12 m6 registro-bienvenida">
-                        <var ></var>
-                        <h4>Nuevo Ticket</h4>
-                        <div class="registro-bienvenida-texto">
-                            Introduzca la información del ticket
-                        </div>
-                        <span>Gracias</span>
-                    </div>
-                    <div class="col s12 m6 registro-formulario">
-                        <div class="input-field">
-                            <input id="nameAltaTicket" type="text" maxlength="30" data-length="30" required />
-                            <label for="nameAltaTicket">Concepto:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="idpacienteAltaTicket" type="text"  maxlength="30" data-length="30" required />
-                            <label for="idpacienteAltaTicket">Id del paciente:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="priceAltaTicket" type="number" required />
-                            <label for="priceAltaTicket">Precio:</label>
-                        </div>
-                        <div class="div-btnInicioSesion">
-                            <a id="btnCreateTicket" class="btn waves-effect waves-light">Crear ticket<i class="material-icons left">create</i></a>
-                        </div>                      
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal AltaConsultor -->
-    <div id="modalAltaConsultor" class="modal modal-registro">
-        <div class="modal-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col s12 m6 registro-bienvenida">
-                        <var ></var>
-                        <h4>Información Consultor</h4>
-                        <div class="registro-bienvenida-texto">
-                            Introduzca la información del consultor
-                        </div>
-                        <span>Gracias</span>
-                    </div>
-                    <div class="col s12 m6 registro-formulario">
-                        <div class="input-field">
-                            <input id="nameAltaConsultor" type="text" maxlength="30" data-length="30" required />
-                            <label for="nameAltaConsultor">Nombre:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="surname1AltaConsultor" type="text"  maxlength="30" data-length="30" required />
-                            <label for="surname1AltaConsultor">Primer apellido:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="surname2AltaConsultor" type="text" required />
-                            <label for="surname2AltaConsultor">Segundo apellido:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="mailAltaConsultor" type="text" required />
-                            <label for="mailAltaConsultor">Email:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="dniAltaConsultor" type="text" required />
-                            <label for="dniAltaConsultor">DNI:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="birthdayAltaConsultor" type="text" required />
-                            <label for="birthdayAltaConsultor">Fecha de nacimiento:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="phoneAltaConsultor" type="text" required />
-                            <label for="phoneAltaConsultor">Teléfono:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="addressAltaConsultor" type="text" required />
-                            <label for="addressAltaConsultor">Dirección:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="idConsultorAltaConsultor" type="text" required />
-                            <label for="idConsultorAltaConsultor">Id consultor:</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="statusAltaConsultor" type="text" required />
-                            <label for="statusAltaConsultor">Estatus:</label>
-                        </div>
-                        <div class="div-btnInicioSesion">
-                            <a id="btnCreateConsultor" class="btn waves-effect waves-light">Guardar Consultor<i class="material-icons left">create</i></a>
-                        </div>                      
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal item Clinica -->
-<div id="modalItem" class="modal modal-registro">
+<!-- Modal de Inicio de Sesión -->
+<div id="modalSesion" class="modal modal-registro">
     <div class="modal-content">
         <div class="container">
-         
-                
-                    <var ></var>
-                    <h4 id="modaltitle">Información Consultor</h4>
-                    <input type="hidden" id="cifClinica" value="3487">
-                    <nav class="menu">
-                        <ul>
-                            <li><a id="btnPacientes">PACIENTES</a>
-                                <ul>
-                                    <li><a>Consultar pacientes</a>
-                                        <ul>
-                                            <li><a id="btnTodosPacientesClinica">Ver todas</a></li>
-                                            <li><a id="btnIdPacientesClinica">Por Identificación</a></li>
-                                            <li><a id="btnActivosPacientesClinica">Activos</a></li>
-                                            <li><a id="btnInactivosPacientesClinica">Inactivos</a></li>
-                                            <li><a id="btnEsperaPacientesClinica">En Espera</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a id="btnTickets">TICKETS</a>
-                                <ul>
-                                    <li><a id="btnTodosTicketsClinica">Ver todos</a></li>
-                                    <li><a id="btnPacienteTicketsClinica">Por Paciente</a></li>
-                                    <li><a id="btnConceptoTicketsClinica">Por Concepto</a></li>
-                                </ul>
-                            </li>
-                            <li><a id="btnSaldos">SALDOS</a>
-                                <ul>
-                                    <li><a id="btnTotalSaldoClinica">Ver total</a></li>
-                                    <li><a id="btnPacienteSaldoClinica">Por Paciente</a></li>
-                                    <li><a id="btnConsultorSaldoClinica">Por Consultor</a></li>
-                                </ul>
-                            </li>
-                            <!--
-                            <li><a id="btnTickets">FACTURAS</a></li>
-                            <li><a id="btnTodoPost">Todos los Posts</a></li>
-                            <li><a id="btnMisPost">Mis Posts</a></li>
-                            <li><a id="btnModalPost">Realiza un Post</a></li>
-                            <li><a href="index.html#footer">Contactenos</a></li>
-                            -->
-                        </ul>
-                    </nav>
-                    <section class="posts" id="modalresults">
-                        
-                    </section>
+            <div class="row">
+                <div class="col s12 m6 registro-bienvenida">
+                    <h4>Bienvenido a Plan Cobertura Dental</h4>
+                    <div class="registro-bienvenida-texto">
+                        Estamos encantados de tener de vuelta
+                    </div>
+                    <span>Inicia Sesión</span>
+                </div>
+                <div class="col s12 m6 registro-formulario">
+                    <div class="input-field">
+                        <input id="emailSesion" type="email" required/>
+                        <label for="emailSesion">E-mail:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="passwordSesion" type="password" required/>
+                        <label for="passwordSesion">Password:</label>
+                    </div>
+                    <div class="div-btnInicioSesion">
+                        <a id="btnInicioEmail" class="btn waves-effect waves-light">Iniciar Sesión<i
+                                class="material-icons right">send</i></a>
+                    </div>
+                </div>
+                <div class="col s12 m12 div-btnRegistrarse">
+                    <a id="btnRegistrarse" class="btn waves-effect waves-light">Crear una cuenta<i
+                            class="material-icons left">account_box</i></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-    <!-- Modal item Paciente -->
-    <div id="modalItemPaciente" class="modal modal-registro">
-        <div class="modal-content">
-            <div class="container">
-                <var ></var>
-                    <h4 id="modaltitlepaciente">Información Consultor</h4>
-                        <input type="hidden" id="idPaciente" value="3487">
-                        <nav class="menu">
-                            <ul>
-                                <li><a id="btnTickets">TICKETS</a>
-                                    <ul>
-                                        <li><a id="btnTodosTicketsPaciente">Ver todos</a></li>
-                                        <li><a id="btnConceptoTicketsPaciente">Por Concepto</a></li>
-                                    </ul>
-                                </li>
-                                <li><a id="btnPuntosPaciente">PUNTOS</a></li>
-                                <li><a id="btnSaldosPaciente">SALDOS</a></li>
-                                <!--
-                                <li><a id="btnTickets">FACTURAS</a></li>
-                                <li><a id="btnTodoPost">Todos los Posts</a></li>
-                                <li><a id="btnMisPost">Mis Posts</a></li>
-                                <li><a id="btnModalPost">Realiza un Post</a></li>
-                                <li><a href="index.html#footer">Contactenos</a></li>
-                                -->
-                            </ul>
-                        </nav>
-                        <section class="posts" id="modalresultspaciente">
-                            
-                        </section>
+<!-- Modal de registro -->
+<div id="modalRegistro" class="modal modal-registro">
+    <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 registro-bienvenida">
+                    <h4>Registro de nuevo usuario</h4>
+                    <div class="registro-bienvenida-texto">
+                        Nuevo usuario con acceso de lectura
+                    </div>
+                    <span>Introduzca los datos</span>
+                </div>
+                <div class="col s12 m6 registro-formulario">
+                    <div class="input-field">
+                        <input id="nombreContactoReg" type="text" maxlength="50" data-length="50" required/>
+                        <label for="nombreContactoReg">Nombres:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="emailContactoReg" type="email" maxlength="50" data-length="50" required/>
+                        <label for="emailContactoReg">E-mail:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="passwordReg" type="password" maxlength="10" data-length="10" required/>
+                        <label for="passwordReg">Password:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="cifclinicaReg" type="text" maxlength="10" data-length="10" required/>
+                        <label for="cifclinicaReg">Cif de clínica: </label>
+                    </div>
+                    <div class="div-btnInicioSesion">
+                        <a id="btnRegistroEmail" class="btn waves-effect waves-light">Registrarse<i
+                                class="material-icons left">account_box</i></a>
+                    </div>
+                </div>
+                <div class="col s12 m12 div-btnRegistrarse">
+                    <a id="btnIniciarSesion" class="btn waves-effect waves-light">Iniciar Sesión<i
+                            class="material-icons right">send</i></a>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Modal item Consultor -->
-    <div id="modalItemConsultor" class="modal modal-registro">
-        <div class="modal-content">
-            <div class="container">
-                <var ></var>
-                    <h4 id="modaltitleconsultor">Información Consultor</h4>
-                        <input type="hidden" id="idConsultor" value="3487">
-                        <nav class="menu">
-                            <ul>
-                                <li><a id="btnPacientes">PACIENTES</a>
-                                    <ul>
-                                        <li><a>Consultar pacientes</a>
-                                            <ul>
-                                                <li><a id="btnTodosPacientesConsultor">Ver todas</a></li>
-                                                <li><a id="btnIdPacientesConsultor">Por Identificación</a></li>
-                                                <li><a id="btnPacientesConsultorClinica">Por Clínica</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                
-                                <li><a id="btnTickets">TICKETS</a>
-                                    <ul>
-                                        <li><a id="btnTodosTicketsConsultor">Ver todos</a></li>
-                                        <li><a id="btnConceptoTicketsConsultor">Por Concepto</a></li>
-                                        <li><a id="btnConsultorTicketsPaciente">Por Paciente</a></li>
-                                        <li><a id="btnConsultorTicketsClinica">Por Clínica</a></li>
-                                    </ul>
-                                </li>
-                                <li><a id="btnSaldosConsultor">SALDOS</a></li>
-                            </ul>
-                        </nav>
-                        <section class="posts" id="modalresultsconsultor">
-                            
-                        </section>
+<!-- Modal de registro -->
+<div id="modalRegistroUsuario" class="modal modal-registro">
+    <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 registro-bienvenida">
+                    <h4>Registro de nuevo usuario</h4>
+                    <div class="registro-bienvenida-texto">
+                        Nuevo usuario con acceso a la app
+                    </div>
+                    <span>Introduzca los datos</span>
+                </div>
+                <div class="col s12 m6 registro-formulario">
+                    <div class="input-field">
+                        <input id="nombreUsuarioAppReg" type="text" maxlength="50" data-length="50" required/>
+                        <label for="nombreUsuarioAppReg">Nombres:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="emailUsuarioAppReg" type="email" maxlength="50" data-length="50" required/>
+                        <label for="emailUsuarioAppReg">E-mail:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="passwordUsuarioAppReg" type="password" maxlength="10" data-length="10" required/>
+                        <label for="passwordUsuarioAppReg">Password:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="dniUsuarioAppReg" type="password" maxlength="10" data-length="10" required/>
+                        <label for="dniUsuarioAppReg">Password:</label>
+                    </div>
+                    <div class="div-btnInicioSesion">
+                        <a id="btnRegistroUsuarioEmail" class="btn waves-effect waves-light">Registrarse<i
+                                class="material-icons left">account_box</i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
+
+
+<!-- Modal Id -->
+<div id="modalId" class="modal modal-registro">
+    <div class="modal-content">
+        <div class="container">
+            <div class="input-field">
+                <input id="idSearch" type="text" maxlength="30" data-length="30" required/>
+                <label for="idSearch">Introduzca el ID:</label>
+                <input id="typeSearchid" type="hidden" maxlength="30" data-length="30"/>
+            </div>
+            <div class="div-btnInicioSesion">
+                <a id="btnSearchid" class="btn waves-effect waves-light">Buscar<i class="material-icons left">create</i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal CifClinica -->
+<div id="modalCifClinica" class="modal modal-registro">
+    <div class="modal-content">
+        <div class="container">
+            <div class="input-field">
+                <input id="nameSearchClinicaCif" type="text" maxlength="30" data-length="30" required/>
+                <label for="nameSearchClinicaCif">Introduzca el CIF:</label>
+            </div>
+            <div class="div-btnInicioSesion">
+                <a id="btnSearchCifClinica" class="btn waves-effect waves-light">Buscar<i class="material-icons left">create</i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal AltaPaciente -->
+<div id="modalAltaPaciente" class="modal modal-registro">
+    <div class="modal-content">
+        <div class="container">
+            <h4>Información Paciente</h4>
+            <div class="row">
+                <div class="col s12 m6 registro-bienvenida">
+                    <div class="input-field">
+                        <input id="nameAltaPaciente" type="text" maxlength="30" data-length="30" required/>
+                        <label for="nameAltaPaciente">Nombre Paciente:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="surname1AltaPaciente" type="text" maxlength="30" data-length="30" required/>
+                        <label for="surname1AltaPaciente">Primer apellido:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="surname2AltaPaciente" type="text" required/>
+                        <label for="surname2AltaPaciente">Segundo apellido:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="mailAltaPaciente" type="email" required/>
+                        <label for="mailAltaPaciente">Email:</label>
+                    </div>
+                    <label for="genderAltaPaciente">Género:</label>
+                    <form id="genderAltaPaciente">
+                        <input type="radio" id="maleActivePaciente" name="gender" value="male" checked>
+                        <label for="maleActivePaciente">Hombre</label><br>
+                        <input type="radio" id="femaleActivePaciente" name="gender" value="female">
+                        <label for="femaleActivePaciente">Mujer</label><br>
+                        <input type="radio" id="otherActivePaciente" name="gender" value="other">
+                        <label for="otherActivePaciente">Otro</label>
+                    </form>
+                    <div class="input-field">
+                        <label>Fecha de nacimiento:</label>
+                        <input type="date" id="birthdayAltaPaciente" name="birthday" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="addressAltaPaciente">Dirección:</label>
+                        <input id="addressAltaPaciente" type="text" required/>
+                    </div>
+                    <div class="input-field">
+                        <input id="phoneAltaPaciente" type="tel" required/>
+                        <label for="phoneAltaPaciente">Teléfono:</label>
+                    </div>
+                    <label for="idtypeAltaPaciente">Tipo de id:</label>
+                    <form>
+                        <input type="radio" id="dniActivePaciente" name="idtype" value="DNI" checked>
+                        <label for="dniActivePaciente">DNI</label><br>
+                        <input type="radio" id="passActivePaciente" name="idtype" value="Passport">
+                        <label for="passActivePaciente">Passport</label><br>
+                        <input type="radio" id="nieActivePaciente" name="idtype" value="NIE">
+                        <label for="nieActivePaciente">NIE</label>
+                    </form>
+                    <div class="input-field">
+                        <input id="idAltaPaciente" type="text" required/>
+                        <label for="idAltaPaciente">Id:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="idclinicaAltaPaciente" type="hidden" required/>
+                        <input id="idconsultorAltaPaciente" type="text" required/>
+                        <label for="idconsultorAltaPaciente">Id del consultor asociado:</label>
+                    </div>
+                    <label for="creditplanPaciente">Credit Plan:</label>
+                    <form>
+                        <input id="iscredittruePaciente" type="radio" name="iscreditplan" value="true" required/>
+                        <label for="iscredittruePaciente">Si</label>
+                        <input id="iscreditfalsePaciente" type="radio" name="iscreditplan" value="false" required
+                               checked/>
+                        <label for="iscreditfalsePaciente">No</label>
+                    </form>
+                    <div class="input-field">
+                        <input id="maritalAltaPaciente" type="text" required/>
+                        <label for="maritalAltaPaciente">Estado Civil:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="mobileAltaPaciente" type="tel" required/>
+                        <label for="mobileAltaPaciente">Móvil:</label>
+                    </div>
+
+                    <input id="typeForm" type="hidden" required/>
+                    <label for="statusPaciente">Estatus:</label>
+                    <form>
+                        <input type="radio" id="statusActivePaciente" name="statusPaciente" value="active" checked>
+                        <label for="statusActivePaciente">Activa</label><br>
+                        <input type="radio" id="statusInactivePaciente" name="statusPaciente" value="inactive">
+                        <label for="statusInactivePaciente">Inactiva</label><br>
+                        <input type="radio" id="statusStandbyPaciente" name="statusPaciente" value="standby">
+                        <label for="statusStandbyPaciente">En espera</label>
+                    </form>
+                    <!--
+                    <div class="progress-panel">
+                        <label for="btnUploadFile">Imagen:</label>
+                        <input type="file" value="upload" id="btnUploadFile" />
+                        <div class="progress">
+                            <div class="determinate" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    -->
+                    <div class="div-btnInicioSesion">
+                        <a id="btnCreatePaciente" class="btn waves-effect waves-light">Guardar Paciente<i
+                                class="material-icons left">create</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal nuevoTicket -->
+<div id="modalNuevoTicket" class="modal modal-registro">
+    <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 registro-bienvenida">
+                    <var></var>
+                    <h4>Nuevo Ticket</h4>
+                    <div class="registro-bienvenida-texto">
+                        Introduzca la información del ticket
+                    </div>
+                    <span>Gracias</span>
+                </div>
+                <div class="col s12 m6 registro-formulario">
+                    <div class="input-field">
+                        <input id="nameAltaTicket" type="text" maxlength="30" data-length="30" required/>
+                        <label for="nameAltaTicket">Concepto:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="idpacienteAltaTicket" type="text" maxlength="30" data-length="30" required/>
+                        <label for="idpacienteAltaTicket">Id del paciente:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="priceAltaTicket" type="number" required/>
+                        <label for="priceAltaTicket">Precio:</label>
+                    </div>
+                    <div class="div-btnInicioSesion">
+                        <a id="btnCreateTicket" class="btn waves-effect waves-light">Crear ticket<i
+                                class="material-icons left">create</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal AltaConsultor -->
+<div id="modalAltaConsultor" class="modal modal-registro">
+    <div class="modal-content">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 registro-bienvenida">
+                    <var></var>
+                    <h4>Información Consultor</h4>
+                    <div class="registro-bienvenida-texto">
+                        Introduzca la información del consultor
+                    </div>
+                    <span>Gracias</span>
+                </div>
+                <div class="col s12 m6 registro-formulario">
+                    <div class="input-field">
+                        <input id="nameAltaConsultor" type="text" maxlength="30" data-length="30" required/>
+                        <label for="nameAltaConsultor">Nombre:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="surname1AltaConsultor" type="text" maxlength="30" data-length="30" required/>
+                        <label for="surname1AltaConsultor">Primer apellido:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="surname2AltaConsultor" type="text" required/>
+                        <label for="surname2AltaConsultor">Segundo apellido:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="mailAltaConsultor" type="text" required/>
+                        <label for="mailAltaConsultor">Email:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="dniAltaConsultor" type="text" required/>
+                        <label for="dniAltaConsultor">DNI:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="birthdayAltaConsultor" type="text" required/>
+                        <label for="birthdayAltaConsultor">Fecha de nacimiento:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="phoneAltaConsultor" type="text" required/>
+                        <label for="phoneAltaConsultor">Teléfono:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="addressAltaConsultor" type="text" required/>
+                        <label for="addressAltaConsultor">Dirección:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="idConsultorAltaConsultor" type="text" required/>
+                        <label for="idConsultorAltaConsultor">Id consultor:</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="statusAltaConsultor" type="text" required/>
+                        <label for="statusAltaConsultor">Estatus:</label>
+                    </div>
+                    <div class="div-btnInicioSesion">
+                        <a id="btnCreateConsultor" class="btn waves-effect waves-light">Guardar Consultor<i
+                                class="material-icons left">create</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal item Clinica -->
+<div id="modalItem" class="modal modal-registro">
+    <div class="modal-content">
+        <div class="container">
+
+
+            <var></var>
+            <h4 id="modaltitle">Información Consultor</h4>
+            <input type="hidden" id="cifClinica" value="3487">
+            <nav class="menu">
+                <ul>
+                    <li><a id="btnPacientes">PACIENTES</a>
+                        <ul>
+                            <li><a>Consultar pacientes</a>
+                                <ul>
+                                    <li><a id="btnTodosPacientesClinica">Ver todas</a></li>
+                                    <li><a id="btnIdPacientesClinica">Por Identificación</a></li>
+                                    <li><a id="btnActivosPacientesClinica">Activos</a></li>
+                                    <li><a id="btnInactivosPacientesClinica">Inactivos</a></li>
+                                    <li><a id="btnEsperaPacientesClinica">En Espera</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a id="btnTickets">TICKETS</a>
+                        <ul>
+                            <li><a id="btnTodosTicketsClinica">Ver todos</a></li>
+                            <li><a id="btnPacienteTicketsClinica">Por Paciente</a></li>
+                            <li><a id="btnConceptoTicketsClinica">Por Concepto</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="btnSaldos">SALDOS</a>
+                        <ul>
+                            <li><a id="btnTotalSaldoClinica">Ver total</a></li>
+                            <li><a id="btnPacienteSaldoClinica">Por Paciente</a></li>
+                            <li><a id="btnConsultorSaldoClinica">Por Consultor</a></li>
+                        </ul>
+                    </li>
+                    <!--
+                    <li><a id="btnTickets">FACTURAS</a></li>
+                    <li><a id="btnTodoPost">Todos los Posts</a></li>
+                    <li><a id="btnMisPost">Mis Posts</a></li>
+                    <li><a id="btnModalPost">Realiza un Post</a></li>
+                    <li><a href="index.html#footer">Contactenos</a></li>
+                    -->
+                </ul>
+            </nav>
+            <section class="posts" id="modalresults">
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- Modal item Paciente -->
+<div id="modalItemPaciente" class="modal modal-registro">
+    <div class="modal-content">
+        <div class="container">
+            <var></var>
+            <h4 id="modaltitlepaciente">Información Consultor</h4>
+            <input type="hidden" id="idPaciente" value="3487">
+            <nav class="menu">
+                <ul>
+                    <li><a id="btnTickets">TICKETS</a>
+                        <ul>
+                            <li><a id="btnTodosTicketsPaciente">Ver todos</a></li>
+                            <li><a id="btnConceptoTicketsPaciente">Por Concepto</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="btnPuntosPaciente">PUNTOS</a></li>
+                    <li><a id="btnSaldosPaciente">SALDOS</a></li>
+                    <!--
+                    <li><a id="btnTickets">FACTURAS</a></li>
+                    <li><a id="btnTodoPost">Todos los Posts</a></li>
+                    <li><a id="btnMisPost">Mis Posts</a></li>
+                    <li><a id="btnModalPost">Realiza un Post</a></li>
+                    <li><a href="index.html#footer">Contactenos</a></li>
+                    -->
+                </ul>
+            </nav>
+            <section class="posts" id="modalresultspaciente">
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- Modal item Consultor -->
+<div id="modalItemConsultor" class="modal modal-registro">
+    <div class="modal-content">
+        <div class="container">
+            <var></var>
+            <h4 id="modaltitleconsultor">Información Consultor</h4>
+            <input type="hidden" id="idConsultor" value="3487">
+            <nav class="menu">
+                <ul>
+                    <li><a id="btnPacientes">PACIENTES</a>
+                        <ul>
+                            <li><a>Consultar pacientes</a>
+                                <ul>
+                                    <li><a id="btnTodosPacientesConsultor">Ver todas</a></li>
+                                    <li><a id="btnIdPacientesConsultor">Por Identificación</a></li>
+                                    <li><a id="btnPacientesConsultorClinica">Por Clínica</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a id="btnTickets">TICKETS</a>
+                        <ul>
+                            <li><a id="btnTodosTicketsConsultor">Ver todos</a></li>
+                            <li><a id="btnConceptoTicketsConsultor">Por Concepto</a></li>
+                            <li><a id="btnConsultorTicketsPaciente">Por Paciente</a></li>
+                            <li><a id="btnConsultorTicketsClinica">Por Clínica</a></li>
+                        </ul>
+                    </li>
+                    <li><a id="btnSaldosConsultor">SALDOS</a></li>
+                </ul>
+            </nav>
+            <section class="posts" id="modalresultsconsultor">
+
+            </section>
+        </div>
+    </div>
+</div>
 
 <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-storage.js"></script>
-
-
-  
-  <!-- Initialize Firebase -->
-  <script src="https://www.gstatic.com/firebase/init.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-storage.js"></script>
 
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
-
 
 
 <!--build:js js/main.min.js -->
@@ -629,34 +663,34 @@
 <script type="text/javascript" src="js/saldo/saldoController.js"></script>
 
 <script>
-    function call(section){
-        if($('#btnInicioSesion').text() != "Iniciar Sesión"){
+    function call(section) {
+        if ($('#btnInicioSesion').text() != "Iniciar Sesión") {
             const idClinica = $('#idclinicaAltaPaciente').val()
-        switch(section){
-            case "paciente":
-                const paciente = new Paciente()
-                paciente.showPacientesByIdClinica(idClinica)
-            break
-            case "consultor":
-                const consultores = new Consultor()
-                consultores.showAllConsultorByClinica(idClinica)
-            break
-            case "usuario":
-                const usuario = new Usuario()
-                usuario.showUsuarioAll(idClinica)
-                break
-            case "ticket":
-                const ticket = new Ticket()
-                ticket.showTicketByIdClinica(idClinica)
-                break
-        }  
-    }else{
+            switch (section) {
+                case "paciente":
+                    const paciente = new Paciente()
+                    paciente.showPacientesByIdClinica(idClinica)
+                    break
+                case "consultor":
+                    const consultores = new Consultor()
+                    consultores.showAllConsultorByClinica(idClinica)
+                    break
+                case "usuario":
+                    const usuario = new Usuario()
+                    usuario.showUsuarioAll(idClinica)
+                    break
+                case "ticket":
+                    const ticket = new Ticket()
+                    ticket.showTicketByIdClinica(idClinica)
+                    break
+            }
+        } else {
             Materialize.toast(`Debe iniciar sesión para consultar`, 4000)
         }
-    } 
+    }
 </script>
 <script>
-    function refresh(){
+    function refresh() {
         window.location.reload();
     }
 </script>
