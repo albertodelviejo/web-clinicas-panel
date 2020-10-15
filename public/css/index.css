@@ -80,7 +80,7 @@ body {
   text-align: center;
   position: fixed;
   width: 100%;
-  z-index: 2000;
+  z-index: 900;
 }
 .headerppal .titulo {
   color: #fff;

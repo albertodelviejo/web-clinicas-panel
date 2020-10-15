@@ -79,9 +79,6 @@
 <div id="accordion">
     <section class="menu-center" id="clinicas">
         <div class="row">
-            <div class="col-md-1">
-
-            </div>
             <div class="col-md-2 card">
                 <article class="menu-div" onclick=call("paciente")>
                     <img class="menu-div-img" src="imagenes/pacientes.png" alt="Clinicas">
@@ -128,7 +125,7 @@
         </div>
     </section>
 </div>
-<footer class="footer" id="footer">
+<footer class="footer" id="footer" style="position: fixed">
 
     <div class="contenedor-footer">
         <!-- Esto es el footer -->
@@ -141,14 +138,14 @@
     <div class="modal-content">
         <div class="container">
             <div class="row">
-                <div class="col s12 m6 registro-bienvenida">
+                <div class="col-sm-12 col-md-6 registro-bienvenida">
                     <h4>Bienvenido a Plan Cobertura Dental</h4>
                     <div class="registro-bienvenida-texto">
                         Estamos encantados de tener de vuelta
                     </div>
                     <span>Inicia Sesión</span>
                 </div>
-                <div class="col s12 m6 registro-formulario">
+                <div class="col-sm-12 col-md-6 registro-formulario">
                     <div class="input-field">
                         <input id="emailSesion" type="email" required/>
                         <label for="emailSesion">E-mail:</label>
@@ -162,7 +159,7 @@
                                 class="material-icons right">send</i></a>
                     </div>
                 </div>
-                <div class="col s12 m12 div-btnRegistrarse">
+                <div class="col-sm-12 col-md-12 div-btnRegistrarse">
                     <a id="btnRegistrarse" class="btn waves-effect waves-light">Crear una cuenta<i
                             class="material-icons left">account_box</i></a>
                 </div>
